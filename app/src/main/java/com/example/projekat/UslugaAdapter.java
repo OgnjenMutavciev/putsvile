@@ -23,6 +23,9 @@ public class UslugaAdapter extends BaseAdapter {
         listaUsluga.add(new UslugaModel(tip, kolicina));
         notifyDataSetChanged();
     }
+    public String getItemTip(int i){
+        return listaUsluga.get(i).getTip();
+    }
 
     @Override
     public int getCount() {
