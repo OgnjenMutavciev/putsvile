@@ -52,7 +52,7 @@ public class Radnici extends AppCompatActivity {
                     for(int i=0;i<sviRadnici.length();i++) {
                         String radnik = sviRadnici.getString(i);
                         String URLradnik = URLserver + "/api/radnici/" + radnik;
-                        JSONObject radnikapi = httpHelper.getJSONObjectFromURL(URLradnik);
+                        JSONObject radnikapi = httpHelper.getJSONObjectFromURL(URLradnik).getJSONObject("radnik");
                         String cena = radnikapi.getString("cena");
                         String ocena = radnikapi.getString("ocena");
                         runOnUiThread(() -> {
