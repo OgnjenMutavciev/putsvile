@@ -2,8 +2,8 @@ package com.example.projekat;
 
 public class UslugaModel {
 
-    private String tip;
-    private String kolicina;
+    protected String tip;
+    protected String kolicina;
 
     public UslugaModel(String tip, String kolicina) {
         this.tip = tip;
