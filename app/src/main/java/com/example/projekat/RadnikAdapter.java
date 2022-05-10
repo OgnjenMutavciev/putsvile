@@ -55,6 +55,10 @@ public class RadnikAdapter extends BaseAdapter {
         cena.setText(zadatak.getCena());
         ocena.setText(zadatak.getOcena());
 
+
         return view;
+    }
+    public String getItemNaziv(int i){
+        return listaRadnik.get(i).getNaziv();
     }
 }
