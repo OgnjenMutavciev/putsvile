@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: mongo
+    restart: unless-stopped
+  server:
+    image: tminaorg/putsvile
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    
