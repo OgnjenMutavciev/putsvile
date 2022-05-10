@@ -48,7 +48,7 @@ public class Radnici extends AppCompatActivity {
                                     Toast.LENGTH_LONG)
                             .show();
                 } else {
-                    JSONArray sviRadnici = uslugeapi.getJSONArray("radnici");
+                    JSONArray sviRadnici = uslugeapi.getJSONObject("usluga").getJSONArray("radnici");
                     for(int i=0;i<sviRadnici.length();i++) {
                         String radnik = sviRadnici.getString(i);
                         String URLradnik = URLserver + "/api/radnici/" + radnik;
