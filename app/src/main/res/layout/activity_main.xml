@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/usluge"
         android:layout_width="245dp"
         android:layout_height="55dp"
         android:text="Usluge"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.400" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/postavioglas"
         android:layout_width="245dp"
         android:layout_height="55dp"
         android:text="Postavi oglas"
