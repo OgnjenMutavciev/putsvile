@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,19 +26,19 @@ public class KacenjeOglasa extends AppCompatActivity {
     }
 
     protected void postavi() {
-        EditText imeprezimeet = findViewById(R.id.imeiprezime);
+        EditText imeprezimeet = findViewById(R.id.nazivradnika);
         String imeprezime = imeprezimeet.getText().toString();
-        EditText datumrodjenjaet = findViewById(R.id.datumrodjenja);
+        EditText datumrodjenjaet = findViewById(R.id.datumrodjenjaradnika);
         String datumrodjenja = datumrodjenjaet.getText().toString();
-        EditText mestorodjenjaet = findViewById(R.id.mestorodjenja);
+        EditText mestorodjenjaet = findViewById(R.id.mestorodjenjaradnika);
         String mestorodjenja = mestorodjenjaet.getText().toString();
-        EditText ocenaradnesposobnostiet = findViewById(R.id.ocenaradnesposobnosti);
+        EditText ocenaradnesposobnostiet = findViewById(R.id.ocenaradnika);
         String ocenaradnesposobnosti = ocenaradnesposobnostiet.getText().toString();
-        EditText radnoiskustvoet = findViewById(R.id.radnoiskustvo);
+        EditText radnoiskustvoet = findViewById(R.id.radnoiskustvoradnika);
         String radnoiskustvo = radnoiskustvoet.getText().toString();
-        EditText dodatnesposobnostiet = findViewById(R.id.dodatnesposobnosti);
+        EditText dodatnesposobnostiet = findViewById(R.id.dodatnesposobnostiradnika);
         String dodatnesposobnosti = dodatnesposobnostiet.getText().toString();
-        EditText cenaet = findViewById(R.id.cena);
+        EditText cenaet = findViewById(R.id.cenaradnika);
         String cena = cenaet.getText().toString();
         JSONObject objekat = new JSONObject();
         JSONObject rodjenje = new JSONObject();

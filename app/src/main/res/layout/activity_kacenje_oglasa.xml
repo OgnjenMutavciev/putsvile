@@ -71,7 +71,7 @@
         android:layout_marginTop="50dp" />
 
     <EditText
-        android:id="@+id/imeiprezime"
+        android:id="@+id/nazivradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView"/>
 
     <EditText
-        android:id="@+id/datumrodjenja"
+        android:id="@+id/datumrodjenjaradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView1"/>
 
     <EditText
-        android:id="@+id/mestorodjenja"
+        android:id="@+id/mestorodjenjaradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +98,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView2"/>
 
     <EditText
-        android:id="@+id/ocenaradnesposobnosti"
+        android:id="@+id/ocenaradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +107,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView3"/>
 
     <EditText
-        android:id="@+id/radnoiskustvo"
+        android:id="@+id/radnoiskustvoradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView4"/>
 
     <EditText
-        android:id="@+id/dodatnesposobnosti"
+        android:id="@+id/dodatnesposobnostiradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textView5"/>
 
     <EditText
-        android:id="@+id/cena"
+        android:id="@+id/cenaradnika"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

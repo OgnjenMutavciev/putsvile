@@ -17,7 +17,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/imeiprezime"
+        android:id="@+id/nazivradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ime i prezime"
@@ -27,61 +27,61 @@
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/datumrodjenja"
+        android:id="@+id/datumrodjenjaradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Datum rodjenja"
-        app:layout_constraintTop_toTopOf="@id/imeiprezime"
+        app:layout_constraintTop_toTopOf="@id/nazivradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/mestorodjenja"
+        android:id="@+id/mestorodjenjaradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mesto rodjenja"
-        app:layout_constraintTop_toTopOf="@id/datumrodjenja"
+        app:layout_constraintTop_toTopOf="@id/datumrodjenjaradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/ocenaradnesposobnosti"
+        android:id="@+id/ocenaradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ocena radne sposobnosti"
-        app:layout_constraintTop_toTopOf="@id/mestorodjenja"
+        app:layout_constraintTop_toTopOf="@id/mestorodjenjaradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/radnoiskustvo"
+        android:id="@+id/radnoiskustvoradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Radno iskustvo"
-        app:layout_constraintTop_toTopOf="@id/ocenaradnesposobnosti"
+        app:layout_constraintTop_toTopOf="@id/ocenaradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/dodatnesposobnosti"
+        android:id="@+id/dodatnesposobnostiradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dodatne sposobnosti"
-        app:layout_constraintTop_toTopOf="@id/radnoiskustvo"
+        app:layout_constraintTop_toTopOf="@id/radnoiskustvoradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>
 
     <TextView
-        android:id="@+id/cena"
+        android:id="@+id/cenaradnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cena"
-        app:layout_constraintTop_toTopOf="@id/dodatnesposobnosti"
+        app:layout_constraintTop_toTopOf="@id/dodatnesposobnostiradnika"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="64dp"
         android:layout_marginLeft="32dp"/>

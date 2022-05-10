@@ -47,7 +47,7 @@ public class RadnikAdapter extends BaseAdapter {
         }
 
         TextView naziv = view.findViewById(R.id.naziv);
-        TextView cena = view.findViewById(R.id.cena);
+        TextView cena = view.findViewById(R.id.cenaradnika);
         TextView ocena = view.findViewById(R.id.ocena);
         RadnikModel zadatak = (RadnikModel) getItem(i);
 
