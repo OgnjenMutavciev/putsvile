@@ -3,6 +3,7 @@ package com.example.projekat;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,8 +25,7 @@ public class ProfilRadnika extends AppCompatActivity {
         setContentView(R.layout.activity_profil_radnika);
         nazivRadnika = getIntent().getStringExtra("naziv");
         ucitaj();
-
-
+        kupi();
     }
     protected void ucitaj() {
         new Thread(() -> {
@@ -68,5 +68,33 @@ public class ProfilRadnika extends AppCompatActivity {
                 e.printStackTrace();
             }
         }).start();
+    }
+    protected void kupi() {
+        Button kupi = findViewById(R.id.kupi);
+        kupi.setOnClickListener(view -> {
+            new Thread(() -> {
+                try {
+                    String URL = URLserver + "/api/radnici/" + nazivRadnika;
+                    if(httpHelper.httpDelete(URL)) {
+                        runOnUiThread(() -> {
+                            Toast.makeText(getApplicationContext(),
+                                            "Uspesno kupljen!",
+                                            Toast.LENGTH_LONG)
+                                    .show();
+                            finish();
+                        });
+                    } else {
+                        runOnUiThread(() -> {
+                            Toast.makeText(getApplicationContext(),
+                                            "Greska!",
+                                            Toast.LENGTH_LONG)
+                                    .show();
+                        });
+                    }
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        });
     }
 }

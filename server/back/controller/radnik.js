@@ -40,7 +40,6 @@ router.post("/radnici", upload.single("avatar"), async (req, res) => {
     try {
         const noviRadnik = new radnici(req.body)
         // noviRadnik.avatar = req.file.filename
-        await noviRadnik.save()
         const jednaUsluga = await usluge.findOne({"tip": `${req.body.tipUsluge}`})
         if (jednaUsluga) {
             jednaUsluga.radnici.push(req.body.naziv)
@@ -54,6 +53,7 @@ router.post("/radnici", upload.single("avatar"), async (req, res) => {
             novaUsluga.kolicina++
             await novaUsluga.save()
         }
+        await noviRadnik.save()
         res.status(200).json({
             uspeh: true
         })
@@ -69,6 +69,20 @@ router.delete("/radnici/:id", async (req, res) => {
     try {
         const id = req.params.id
         const jedanRadnik = await radnici.findOne({"naziv": `${id}`})
+        const jednaUsluga = await usluge.findOne({"tip": `${jedanRadnik.tipUsluge}`})
+        let radniciniz=[];
+        jednaUsluga.radnici.forEach((radnik) => {
+            if(radnik!=id) {
+                radniciniz.push(radnik)
+            }
+        })
+        jednaUsluga.radnici = radniciniz
+        jednaUsluga.kolicina--
+        if(jednaUsluga.kolicina > 0) {
+            await jednaUsluga.save()
+        } else {
+            await jednaUsluga.delete()
+        }
         await jedanRadnik.delete()
         res.status(200).json({
             uspeh: true
