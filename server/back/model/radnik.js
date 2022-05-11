@@ -14,6 +14,7 @@ const radnikSchema = new mongoose.Schema({
     radnoIskustvo: String,
     dodatneSposobnosti: String,
     cena: String,
+    tipUsluge: String,
     avatar: { type: String, default: "default.png" }
 }, { collection: "radnici" })
 

@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class KacenjeOglasa extends AppCompatActivity {
+public class PostaviOglas extends AppCompatActivity {
 
     protected static final String URLserver = "http://mx.lavelektronik.com:3000";
     protected static final HttpHelper httpHelper = new HttpHelper();
@@ -20,7 +20,7 @@ public class KacenjeOglasa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kacenje_oglasa);
+        setContentView(R.layout.activity_postavi_oglas);
         Button postavioglas = findViewById(R.id.dugmepostavioglas);
         postavioglas.setOnClickListener(view -> postavi());
     }
@@ -40,6 +40,8 @@ public class KacenjeOglasa extends AppCompatActivity {
         String dodatnesposobnosti = dodatnesposobnostiet.getText().toString();
         EditText cenaet = findViewById(R.id.cenaradnika);
         String cena = cenaet.getText().toString();
+        EditText tipuslugeet = findViewById(R.id.tipuslugeradnika);
+        String tipusluge = tipuslugeet.getText().toString();
         JSONObject objekat = new JSONObject();
         JSONObject rodjenje = new JSONObject();
         try {
@@ -51,6 +53,7 @@ public class KacenjeOglasa extends AppCompatActivity {
             objekat.put("radnoIskustvo", radnoiskustvo);
             objekat.put("dodatneSposobnosti", dodatnesposobnosti);
             objekat.put("cena", cena);
+            objekat.put("tipUsluge", tipusluge);
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Button postavioglas=findViewById(R.id.postavioglas);
         postavioglas.setOnClickListener(view -> {
-            startActivity(new Intent(this, KacenjeOglasa.class));
+            startActivity(new Intent(this, PostaviOglas.class));
         });
     }
 }

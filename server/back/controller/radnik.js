@@ -2,6 +2,7 @@ const express = require("express")
 const router = express()
 const multer = require("multer")
 const upload = multer({ dest: "uploads/" })
+const usluge = require("../model/usluga")
 const radnici = require("../model/radnik")
 
 router.get("/radnici", async (req, res) => {
@@ -40,6 +41,25 @@ router.post("/radnici", upload.single("avatar"), async (req, res) => {
         const noviRadnik = new radnici(req.body)
         // noviRadnik.avatar = req.file.filename
         await noviRadnik.save()
+        await usluge.findOne({"tip": `${req.body.tipUsluge}`}, async (err, jednaUsluga) => {
+            try {
+                if (err) { console.log(err) }
+                if (!jednaUsluga) {
+                    const novaUsluga = new usluge({
+                        "tip": `${req.body.tipUsluge}`
+                    })
+                    novaUsluga.radnici.push(req.body.naziv)
+                    novaUsluga.kolicina++
+                    await novaUsluga.save()
+                } else {
+                    jednaUsluga.radnici.push(req.body.naziv)
+                    jednaUsluga.kolicina++
+                    await jednaUsluga.save()
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        })
         res.status(200).json({
             uspeh: true
         })
